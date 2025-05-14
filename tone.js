@@ -89,7 +89,7 @@ class PlotGenerator {
 
 
     this.freq_1 = 440
-    this.freq_2 = 443
+    this.freq_2 = 440
 
     this.data = {}
     this.num_pt = 512
