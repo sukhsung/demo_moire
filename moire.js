@@ -18,7 +18,7 @@ class MoirePlotter {
         });
 
         this.button_toggle.onclick = () => {
-            this.toggle_image2()
+            this.toggle_image1()
         }
         this.initialize()
 
@@ -36,8 +36,8 @@ class MoirePlotter {
     }
 
 
-    toggle_image2() {
-        this.image2_toggled = !this.image2_toggled
+    toggle_image1() {
+        this.image1_toggled = !this.image1_toggled
         this.draw();
     }
 
@@ -47,7 +47,7 @@ class MoirePlotter {
 
         this.image1.src = 'test.png'; // background image (left)
         this.image2.src = 'test2.png'; // top image (right and movable)
-        this.image2_toggled = false
+        this.image1_toggled = true
 
         // this.image1.onload = this.tryDraw;
         // this.image2.onload = this.tryDraw;
@@ -69,24 +69,24 @@ class MoirePlotter {
         const imgHeight = this.canvas.height;
 
         // draw first image (background)
-        this.ctx.drawImage(this.image1, 0, 0, imgWidth, imgHeight);
+        let image1
+        if (this.image1_toggled){
+            image1 = this.image1
+        } else {
+            image1 = this.image2
+        }
+        this.ctx.drawImage(image1, 0, 0, imgWidth, imgHeight);
 
         // Save context and draw the movable/rotated top image
         this.ctx.save();
 
-        const centerX = this.canvas.width;
+        const centerX = this.canvas.width/2;
         const centerY = this.canvas.height / 2;
-        this.ctx.translate(centerX*this.offsetX/2, centerY);
+        this.ctx.translate(centerX + (this.canvas.width/2 *this.offsetX), centerY);
 
         this.ctx.rotate(this.angle * Math.PI / 180);
 
-        let image2
-        if (this.image2_toggled){
-            image2 = this.image2
-        } else {
-            image2 = this.image1
-        }
-        this.ctx.drawImage(image2, 0, -imgHeight/2, imgWidth, imgHeight);
+        this.ctx.drawImage(this.image1, -imgWidth/2, -imgHeight/2, imgWidth, imgHeight);
 
         this.ctx.restore();
     }
