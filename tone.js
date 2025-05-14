@@ -59,7 +59,7 @@ class ToneGenerator {
     } else {
       msg = "Start " + this.name
     }
-    msg += `: ${this.frequency.toFixed(1)} Hz`
+    msg += `<br>${this.frequency.toFixed(1)} Hz`
 
 
     this.button.innerHTML = msg
