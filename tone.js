@@ -2,7 +2,8 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 class ToneGenerator {
-  constructor( button_name ){
+  constructor( name, button_name ){
+    this.name = name
     this.frequency = 440
     this.isPlaying = false
     this.gainNode= audioCtx.createGain();
@@ -50,9 +51,18 @@ class ToneGenerator {
 
   setFrequency( frequency ){
     this.frequency = frequency
+
+    let msg = ""
     if (this.isPlaying){
+      msg = "Stop " + this.name
       this.oscillator.frequency.setValueAtTime(this.frequency, audioCtx.currentTime)
+    } else {
+      msg = "Start " + this.name
     }
+    msg += `: ${this.frequency.toFixed(1)} Hz`
+
+
+    this.button.innerHTML = msg
   }
 }
 

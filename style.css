@@ -66,3 +66,7 @@ button:disabled {
 .control{
     margin:15px;
 }
+
+.tonebutton{
+    width: 65%;
+}
