@@ -25,7 +25,7 @@ class MoirePlotter {
     }
 
     onchange_translation() {
-        this.offsetX = parseFloat(translationSlider.value);
+        this.offsetX = parseFloat(translationSlider.value)/100;
         this.draw();
     }
 
@@ -55,26 +55,29 @@ class MoirePlotter {
         this.imgSize = 256; // Assuming square images
         this.y = (this.canvas.height - this.imgSize) / 2;
 
-        this.offsetX = parseFloat(translationSlider.value);
+        this.offsetX = parseFloat(translationSlider.value)/100;
         this.angle = parseFloat(rotationSlider.value);
 
     }
 
     draw() {
         this.resizeCanvasToDisplaySize()
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Draw the static left image
-        this.ctx.drawImage(this.image1, 0, this.y, this.imgSize, this.imgSize);
+        const imgWidth = this.canvas.width/2;
+        const imgHeight = this.canvas.height;
+
+        // draw first image (background)
+        this.ctx.drawImage(this.image1, 0, 0, imgWidth, imgHeight);
 
         // Save context and draw the movable/rotated top image
         this.ctx.save();
 
-        const baseX = this.imgSize + this.offsetX;
-        const centerX = baseX + this.imgSize / 2;
-        const centerY = this.y + this.imgSize / 2;
+        const centerX = this.canvas.width;
+        const centerY = this.canvas.height / 2;
+        this.ctx.translate(centerX*this.offsetX/2, centerY);
 
-        this.ctx.translate(centerX, centerY);
         this.ctx.rotate(this.angle * Math.PI / 180);
 
         let image2
@@ -83,7 +86,7 @@ class MoirePlotter {
         } else {
             image2 = this.image1
         }
-        this.ctx.drawImage(image2, -this.imgSize / 2, -this.imgSize / 2, this.imgSize, this.imgSize);
+        this.ctx.drawImage(image2, 0, -imgHeight/2, imgWidth, imgHeight);
 
         this.ctx.restore();
     }
