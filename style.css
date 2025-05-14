@@ -5,12 +5,13 @@ body {
 }
 
 canvas{
-    margin-top: 20px;
+    margin: 20px auto; 
+    /* width: 850px;
+    height: 425px;; */
 }
 /* canvas { 
     border: 1px solid #ccc; 
     display: block; 
-    margin: 20px auto; 
 } */
 
 button {
@@ -33,4 +34,34 @@ button {
 
 .demo_container{
     margin-top: 30px;
+}
+
+button {
+  padding: 12px 24px;             /* Bigger click area */
+  font-size: 16px;                /* Legible text */
+  border: none;
+  border-radius: 6px;             /* Rounded corners */
+  background-color: #007BFF;      /* Bootstrap blue for good contrast */
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;      /* Darker on hover */
+}
+
+button:active {
+  background-color: #004080;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+.tone_control{
+    margin:15px
 }

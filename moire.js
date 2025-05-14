@@ -61,6 +61,7 @@ class MoirePlotter {
     }
 
     draw() {
+        this.resizeCanvasToDisplaySize()
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Draw the static left image
@@ -92,6 +93,17 @@ class MoirePlotter {
         // this.draw()
         // if (this.image1.complete && this.image2.complete) this.draw();
     }
+
+    resizeCanvasToDisplaySize() {
+        const width = this.canvas.clientWidth;
+        const height = this.canvas.clientHeight;
+
+        // Only resize if the canvas size differs from its display size
+        if (this.canvas.width !== width || this.canvas.height !== height) {
+            this.canvas.width = width;
+            this.canvas.height = height;
+        }
+        }
 
 
 }

@@ -3,6 +3,7 @@
     <head>
         <title>Moiré oh moiré</title>
         <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -15,10 +16,10 @@
             </div>
             <div id="demo_1" class="demo_container">
                 <div>
-                    <div>
+                    <div class="tone_control">
                         <button id="tonebutton_1">Start Tone</button> Frequency 1: 440 Hz
                     </div>
-                    <div>
+                    <div class="tone_control">
                         <button id="tonebutton_2">Start Tone</button> Frequency 2: <output id="freq_2">440</output>Hz
                         <br>
                         <input id="range_2" type="range" value="4400" min="4400" max="4600">
@@ -29,7 +30,7 @@
                 </div>
 
                 <div id="graph">
-                    <canvas id="canvas_sine" width="512"></canvas>
+                    <canvas id="canvas_sine" ></canvas>
                 </div>
             </div>
 
@@ -43,7 +44,7 @@
                     <label>Translation X: <input type="range" id="translationSlider" min="-250" max="5" value="5">
                 </div>
 
-                <canvas id="canvas_moire" width="512" height="256"></canvas>
+                <canvas id="canvas_moire"></canvas>
                 <div>
                     <button id="toggle_image">Toggle Image</button>
                 </div>
