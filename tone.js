@@ -61,6 +61,16 @@ class PlotGenerator {
     // Plotting
     this.canvas = document.getElementById("canvas_sine")
 
+    const width = this.canvas.clientWidth;
+    const height = this.canvas.clientHeight;
+
+    // Only resize if the canvas size differs from its display size
+    if (this.canvas.width !== width || this.canvas.height !== height) {
+        this.canvas.width = width;
+        this.canvas.height = height;
+    }
+
+
     this.freq_1 = 440
     this.freq_2 = 443
 
