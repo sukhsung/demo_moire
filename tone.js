@@ -143,6 +143,8 @@ class PlotGenerator {
           borderWidth: 1,
           pointStyle: false,
           animation: false,
+          cubicInterpolationMode: 'monotone',
+          tension: 0.4
       }
       this.chart.data.datasets.push(dataset)
     }
