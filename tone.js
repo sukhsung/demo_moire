@@ -43,10 +43,10 @@ class ToneGenerator {
 
   stop() {
     if (this.isPlaying) {
-    this.oscillator.stop();
-    this.isPlaying = false
-    this.oscillator.disconnect();
-    this.button.classList.remove("active")
+      this.oscillator.stop();
+      this.isPlaying = false
+      this.oscillator.disconnect();
+      this.button.classList.remove("active")
     }
   }
 

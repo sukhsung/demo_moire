@@ -54,18 +54,10 @@ button {
   transition: background 0.2s ease;
 }
 
-button:hover {
-  background-color: #0056b3;      /* Darker on hover */
-}
-
 .active {
   background-color: #b83e75;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
 
 
 .control{
