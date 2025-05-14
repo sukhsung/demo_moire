@@ -58,7 +58,7 @@ button:hover {
   background-color: #0056b3;      /* Darker on hover */
 }
 
-button:active {
+.active {
   background-color: #b83e75;
 }
 
