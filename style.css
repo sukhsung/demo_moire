@@ -4,6 +4,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 body { 
     font-family: "futura", sans-serif; 
     text-align: center; 
+    flex-direction: column;
 }
 
 canvas{
@@ -64,6 +65,14 @@ button {
     margin:15px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
 /* .tonebutton{
     width: 35%;
 } */
