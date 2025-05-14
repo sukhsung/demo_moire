@@ -82,7 +82,7 @@ class MoirePlotter {
 
         const centerX = this.canvas.width/2;
         const centerY = this.canvas.height / 2;
-        this.ctx.translate(centerX + (this.canvas.width/2 *this.offsetX), centerY);
+        this.ctx.translate(centerX + (this.canvas.width/2 *this.offsetX/10), centerY);
 
         this.ctx.rotate(this.angle * Math.PI / 180);
 
