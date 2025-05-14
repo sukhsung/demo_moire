@@ -28,11 +28,10 @@ class ToneGenerator {
   onclick(){
     if (!this.isPlaying) {
       this.start();
-      this.button.textContent = 'Stop Tone';
     } else {
       this.stop();
-      this.button.textContent = 'Start Tone';
     }
+    this.updateButton()
   }
 
   start(){
@@ -51,11 +50,16 @@ class ToneGenerator {
 
   setFrequency( frequency ){
     this.frequency = frequency
+    if (this.isPlaying){
+      this.oscillator.frequency.setValueAtTime(this.frequency, audioCtx.currentTime)
+    }
+    this.updateButton()
+  }
 
+  updateButton(){
     let msg = ""
     if (this.isPlaying){
       msg = "Stop " + this.name
-      this.oscillator.frequency.setValueAtTime(this.frequency, audioCtx.currentTime)
     } else {
       msg = "Start " + this.name
     }
@@ -63,6 +67,7 @@ class ToneGenerator {
 
 
     this.button.innerHTML = msg
+    
   }
 }
 
