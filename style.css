@@ -1,3 +1,5 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
 
 body { 
     font-family: "futura", sans-serif; 
@@ -22,11 +24,6 @@ h1 {
     display: block; 
 } */
 
-button {
-    font-family: "futura", sans-serif; 
-    font-size: 15px;
-}
-
 #main_container{
   width: 95vw;                 /* Use 95% of the viewport width */
   margin: 0 auto;              /* Center horizontally */
@@ -46,11 +43,12 @@ button {
 }
 
 button {
+  font-family: "futura", sans-serif; 
   padding: 12px 24px;             /* Bigger click area */
   font-size: 16px;                /* Legible text */
   border: none;
   border-radius: 6px;             /* Rounded corners */
-  background-color: #007BFF;      /* Bootstrap blue for good contrast */
+  background-color: #4463c2;      /* Bootstrap blue for good contrast */
   color: white;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -61,7 +59,7 @@ button:hover {
 }
 
 button:active {
-  background-color: #004080;
+  background-color: #b83e75;
 }
 
 button:disabled {
