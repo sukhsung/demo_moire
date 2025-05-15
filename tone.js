@@ -150,6 +150,8 @@ class PlotGenerator {
     }
 
     this.chart.options.scales.x.max = dx*(this.num_pt-1)
+    this.chart.options.scales.y.max = 2
+    this.chart.options.scales.y.min = -11
 
     this.chart.update()
   }
