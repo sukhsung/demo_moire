@@ -23,7 +23,7 @@ canvas{
 
 h1 {
   font-family: "Syne", sans-serif;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1em, 5vw, 3rem);
   line-height: 1.2;
   margin: 1rem 0;
   text-align: center;
